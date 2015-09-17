@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies>
+	...
+	<dependency>
+		<groupId>com.stackoverflow...</groupId>
+		<artifactId>artifactId...</artifactId>
+		<version>1.0</version>
+	</dependency>
+	...
+</dependencies>
