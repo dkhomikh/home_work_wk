@@ -7,3 +7,4 @@ for chromedriver: chromedriver.exe (for windows only)
 4. Logging has been simplified as System.out... due to nature of the project (homework) and implementation would be different such as java logger (for example)
 5. Code is not hooked to any test framework (Cucumber, etc.) due to time constrains, just self contained java code
 5. All validations are limited or simplified. Real implementation would include more validations and checkpoints, validations within test framework
+6. application can be run from command line such as: \workspace\wikia.homework.dk>java -jar run_wikia_test.jar
