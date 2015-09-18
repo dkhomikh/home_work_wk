@@ -31,25 +31,37 @@ public class Drivers {
 
 	}
 
+	
 	public static WebDriver chrome() throws IOException {
 
 		System.setProperty("webdriver.chrome.driver",
 				"C:/selenium/chrome_driver/chromedriver/chromedriver.exe");
 		System.out.println(System.getProperty("webdriver.chrome.driver"));
 
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 
 		return driver;
 
 	}
 
-	public static WebDriver GoTo(String browser,
-			String urlName) throws IOException {
+	public static void DriverInit(String browser) throws IOException {
 		if (String.valueOf(browser).equals("firefox")){
 			driver=firefox();}
 		else{
 			driver=chrome();
 		}
+		
+		DriverReport("Driver Init: " + browser);
+
+	}
+	
+	public static WebDriver GoTo(String browser,
+			String urlName) throws IOException {
+//		if (String.valueOf(browser).equals("firefox")){
+//			driver=firefox();}
+//		else{
+//			driver=chrome();
+//		}
 		
 		driver.get(urlName);
 		
@@ -59,7 +71,7 @@ public class Drivers {
 
 	}
 
-	public static void BrowserQuit(WebDriver driver) throws IOException {
+	public static void BrowserQuit() throws IOException {
 
 		driver.quit();
 

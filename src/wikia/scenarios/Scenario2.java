@@ -10,9 +10,12 @@ public class Scenario2 {
 
 	public void Run(String browser) throws IOException {
 		
+		
 		Drivers.DriverReport("Scenario 2 - test begins");
 		
-		WebDriver driver = Drivers.GoTo(browser, "http://wikiadk.wikia.com/wiki/Wikiadk_Wikia");
+		Drivers.DriverInit(browser);
+		
+		Drivers.GoTo(browser, "http://wikia.com");
 		
 		Drivers.DriverWait(3000);
 
@@ -24,6 +27,10 @@ public class Scenario2 {
 		Drivers.sendKeysByName("password", "mywikia123");
 
 		Drivers.ClickByTagNameAndAttribute("INPUT", "defaultValue", "Log in");
+		
+		Drivers.DriverWait(10000);
+		
+		Drivers.GoTo(browser, "http://wikiadk.wikia.com/wiki/Wikiadk_Wikia");
 
 		Drivers.IsPresentByTagNameAndAttribute("DIV", "className",
 				"avatar-container logged-avatar-placeholder");
@@ -32,7 +39,7 @@ public class Scenario2 {
 		
 		Drivers.ClickByTagNameAndAttribute("a", "text", "Add a Video");
 		
-		Drivers.DriverWait(2000);
+		Drivers.DriverWait(20000);
 		
 		Drivers.sendKeysByName("wpWikiaVideoAddUrl", "http://www.youtube.com/watch?v=h9tRIZyTXTI");
 		
@@ -53,7 +60,7 @@ public class Scenario2 {
 				"The Best Classical Music In The World");
 		
 
-		Drivers.BrowserQuit(driver);
+		Drivers.BrowserQuit();
 		
 		Drivers.DriverReport("Scenario 2 - test ends");
 
